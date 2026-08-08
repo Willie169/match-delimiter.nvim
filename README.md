@@ -5,10 +5,10 @@
 Install the plugin with your preferred package manager, e.g., [folke/lazy.nvim](https://github.com/folke/lazy.nvim):
 ```lua
 return {
-    "Willie169/match-delimiter.nvim",
-    config = function()
-        require("match-delimiter").setup()
-    end
+	"Willie169/match-delimiter.nvim",
+	config = function()
+		require("match-delimiter").setup()
+	end
 }
 ```
 
@@ -23,11 +23,11 @@ require("match-delimiter"),setup({
 		"string",
 	},
 	width = 40,
-    mappings = {
-        round = "<leader>(",
-        square = "<leader>[",
-        curly = "<leader>{",
-    },
+	mappings = {
+		round = "<leader>(",
+		square = "<leader>[",
+		curly = "<leader>{",
+	},
 })
 ```
 
