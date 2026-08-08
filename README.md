@@ -6,6 +6,9 @@ Install the plugin with your preferred package manager, e.g., [folke/lazy.nvim](
 ```lua
 return {
     "Willie169/match-delimiter.nvim",
+    config = function()
+        require("match-delimiter"),setup()
+    end
 }
 ```
 
