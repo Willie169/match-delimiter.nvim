@@ -7,7 +7,7 @@ Install the plugin with your preferred package manager, e.g., [folke/lazy.nvim](
 return {
     "Willie169/match-delimiter.nvim",
     config = function()
-        require("match-delimiter"),setup()
+        require("match-delimiter").setup()
     end
 }
 ```
