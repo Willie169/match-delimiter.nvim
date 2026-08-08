@@ -118,7 +118,7 @@ function match_square()
 end
 
 function match_curly()
-	return match_delimiter("{", "}", M.config.ignored_ts_nods)
+	return match_delimiter("\\{", "\\}", M.config.ignored_ts_nods)
 end
 
 M.setup = function(opts)
