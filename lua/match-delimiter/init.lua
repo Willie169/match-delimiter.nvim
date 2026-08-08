@@ -21,7 +21,7 @@ function match_delimiter(open, close, ignored_ts_node)
 	local root = tree:root()
 
 	local ignored = {}
-	for _, node_type in ipairs(ignored_ts_node) do
+	for _, node_type in ipairs(ignored_ts_node or {}) do
 		ignored[node_type] = true
 	end
 
@@ -98,11 +98,9 @@ function match_delimiter(open, close, ignored_ts_node)
 		local buf = vim.api.nvim_get_current_buf()
 		vim.bo[buf].buftype = "nofile"
 		vim.bo[buf].bufhidden = "wipe"
-		vim.bo[buf].swapfile = false
-		vim.bo[buf].modifiable = true
-		vim.api.nvim_buf_set_lines(buf, 0, -1, false, lines)
-		vim.bo[buf].modifiable = true
 		vim.bo[buf].buflisted = false
+		vim.bo[buf].swapfile = false
+		vim.api.nvim_buf_set_lines(buf, 0, -1, false, lines)
 		vim.api.nvim_buf_set_name(buf, "Match Delimiter")
 	end
 
@@ -118,7 +116,7 @@ function match_square()
 end
 
 function match_curly()
-	return match_delimiter("\\{", "\\}", M.config.ignored_ts_nods)
+	return match_delimiter("{", "}", M.config.ignored_ts_nodes)
 end
 
 M.setup = function(opts)
